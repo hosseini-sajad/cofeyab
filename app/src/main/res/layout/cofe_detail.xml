@@ -1,0 +1,221 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/map_container"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsin_tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_of_cofeDetail"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/coffee_shop_counter" />
+
+            <TextView
+                android:id="@+id/name_of_cofeDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/image_of_cofeDetail"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="#9999"
+                android:paddingRight="8dp"
+                android:text="کافه"
+                android:textColor="#fff"
+                android:textSize="30sp" />
+
+            </RelativeLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:layout_margin="16dp"
+        android:animateLayoutChanges="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_of_cofeDetail"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="اطلاعات مکان"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="منطقه: "
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/location_of_cofeDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="تهران"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:background="@android:color/black"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="تلفن: "
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/phone_of_cofeDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="09178565945"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_margin="8dp"
+                    android:background="@android:color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="آدرس: "
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/address_of_cofeDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="شیراز صدرا"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/black" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/map_btn"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingRight="16dp"
+                android:drawableRight="@drawable/baseline_near_me_white_24"
+                android:textSize="16sp"
+                android:text="محل کافه بر روی نقشه"
+                android:textColor="@android:color/white"
+                android:background="#E53935"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="توضیحات"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="غول تکنولوژی کره‌ی جنوبی روز چهارشنبه اعلام کرد که به منظور توسعه هرچه بیشتر فناوری ارتباطی نسل پنجم بر روی محصولات هوشمند خود، زیلبس (پایگاه اطلاعاتی که داده‌های اینترنتی را تحلیل می‌کند) را خریداری کرده است."
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="ساعت کار"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/work_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="ساعت کار:12الی 24"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/shop_fab"
+        android:backgroundTint="#E53935"
+        android:src="@drawable/baseline_near_me_white_24"
+        android:scaleType="center"
+        app:borderWidth="0dp"
+        app:fabSize="mini"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|left|end"/>
+
+</android.support.design.widget.CoordinatorLayout>
